@@ -1,0 +1,50 @@
+.filter-option-inner-inner{font-size: 13px !important;font-weight: 600;color: #595c5f;outline: none !important;}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    background-color: white !important;
+}
+.bootstrap-select .dropdown-toggle:focus, .bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+    outline:none !important;
+}
+.selectpicker{border: 1px solid gray !important;}
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #494e56;
+}
+
+#suggestions {
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.suggestion {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: #f0f0f0;
+}
+
+
+.dropdown-item{
+    font-size: 13px !important;
+    font-weight: 600 !important;
+}
+
+#view_table thead tr th{
+    text-align: center !important;
+    background-color: #494e56 !important;
+    color: white !important;
+  }
+
+  #view_table thead tr{
+    position: sticky !important;
+    z-index: 1;
+    top: 0px !important;
+
+  }
+
+
+ #view_table tr td{
+    line-height: 6px !important;
+    
+}

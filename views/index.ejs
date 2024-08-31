@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator</title>
+  <link rel="stylesheet" href="/static/cdn/bootstrap/bootstrap_v5.3.css">
+  <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css">
+  <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="stylesheet" media="print" href="/static/css/print.css">
+
+</head>
+
+<body>
+
+
+
+  <div class="container-fluid parentbox my-4" id="input-div">
+    <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+      <div class="row bg_bck border-t">
+        <h5 class="text-light text-center f_16 mt-2">Invoice Maker</h5>
+      </div>
+      <div class="row">
+        <p class="pb-0 mb-0 my-2 f_12 fw_600"></p>
+      </div>
+
+      <div class="container-fluid parentbox my-4">
+        <div class="container-fluid newmp pb-3 border-t childbox bg-light">
+          <div class="row bg_r border-t pt-1 rounded-top-2"></div>
+
+          <div class="row my-3 mt-4">
+            <div class="col-md-3 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Party Name:</h6>
+              <input type="text" list="selectPicker" id="input_party_name"
+                class="form-control position-relative border-leftb box_sdw11 f_13 fw_600" placeholder="Party Name...">
+              <datalist id="selectPicker"></datalist>
+
+            </div>
+
+            <div class="col-md-6 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Address:</h6>
+              <input type="text" id="address" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="Address..." name="datefrom" required>
+            </div>
+
+            <div class="col-md-3 my_cols">
+              <h6 class="fw_bold f_13 ms-1">GST No:</h6>
+              <input type="text" id="gst_no" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="GST No..." name="dateto" required>
+            </div>
+          </div>
+          <div class="row my-3 mt-4">
+
+            <div class="col-md-2 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Invoice Date:</h6>
+              <input type="text" id="datepicker" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="DD-MM-YYYY" name="dateto" required>
+            </div>
+
+            <div class="col-md-2 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Invoice No:</h6>
+              <input type="text" id="inovice_no" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="Invoice No.." name="dateto" required>
+            </div>
+
+            <div class="col-md-2 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Buyer's Date:</h6>
+              <input type="text" id="datepicker2" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="DD-MM-YYYY" name="dateto" required>
+            </div>
+
+            <div class="col-md-2 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Buyer's Order No:</h6>
+              <input type="text" id="buyers_order_no" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="Invoice No.." name="dateto" required>
+            </div>
+
+
+            <div class="col-md-2 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Product Description:</h6>
+              <input type="text" id="product_description" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="Product Description..." name="dateto" required>
+            </div>
+
+
+            <div class="col-md-2 my_cols">
+              <h6 class="fw_bold f_13 ms-1">HSN No:</h6>
+              <input type="text" id="hsn_no" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="HSN No..." name="dateto" required>
+            </div>
+
+
+
+
+          </div>
+          <div class="row my-3 mt-4">
+
+            <div class="col-md-3 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Quantity:</h6>
+              <input type="number" id="quantity" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="Quantity" name="dateto" required>
+            </div>
+
+
+            <div class="col-md-3 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Rate:</h6>
+              <input type="number" id="rate" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="Rate.." name="dateto" required>
+            </div>
+
+
+
+
+            <div class="col-md-3 my_cols">
+              <h6 class="fw_bold f_13 ms-1">GST Rate :</h6>
+              <input type="text" id="gst_rate" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="GST Rate..." name="dateto" required>
+            </div>
+
+            <div class="col-md-3 my_cols">
+              <h6 class="fw_bold f_13 ms-1">Amount :</h6>
+              <input type="text" id="amount" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                placeholder="Amount..." name="dateto" required>
+            </div>
+
+
+          </div>
+
+          <div class="row my-3">
+            <div class="col-md-12 d-flex justify-content-center my_cols">
+              <button class="btn bg_b mx-2 mt-4 text-nowrap text-light f_13 fw_600 submitExpense email" type="submit"
+                id="add">
+                Add <i class="fa-solid fa-plus"></i>
+              </button>
+              <button class="btn bg_bck mx-2 mt-4 text-nowrap text-light f_13 fw_600 submitExpense email" type="submit"
+                id="generate">
+                Generate <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="container-fluid parentbox my-4 d-none" id="table-div">
+    <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+      <div class="row vbvb border-t">
+
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered  table-striped" id="view_table">
+            <thead>
+              <tr class="text-center text-nowrap f_13 bg_b fw_600">
+
+                <th>S No.</th>
+                <th>Product Description</th>
+                <th>Hsn No</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Gst Rate</th>
+                <th>Amount</th>
+                <th>Action</th>
+
+
+              </tr>
+            </thead>
+            <tbody id="tbody">
+
+
+
+            </tbody>
+
+
+
+
+
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="container-fluid d-none" id="pdf_content">
+
+    <table class="table-bordered table">
+      <tbody>
+        <tr>
+          <th colspan="2">
+            <img src="/static/img/cp_name.png" class="" height="50px">
+          </th>
+          <th colspan="3" class="text-center align-middle f_10">
+            Tax Invoice
+          </th>
+          <th colspan="2" class="text-center align-middle f_10">
+            (TRIPLICATE)
+          </th>
+        </tr>
+
+        <tr>
+          <th rowspan="6" colspan="3">
+            <div class="f_10 fw-bold">Souvik Bose Designs</div>
+            <div class="f_10 fw_600">
+              WZ-100/1, 3rd Floor, Titarpur,<br>
+              Tagore Garden, New Delhi-110027.
+            </div>
+            <i class="f_10 fw-bold">GSTIN/UIN:<span id="my_gst">07AREPB3288Q1ZC</span> </i>
+            <div class="f_10 fw_600">
+              State Name : Delhi, Code : 07<br>
+              E-Mail : info@souvikbosedesigns.com
+            </div>
+          </th>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Invoice No.
+          </th>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Dated
+          </th>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="f_10 fw-bold text-center align-middle" id="inv_no">
+
+          </td>
+          <td colspan="2" class="f_10 fw-bold text-center align-middle " id="pdf_dt">
+          </td>
+        </tr>
+
+        <tr>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Delivery Note
+          </th>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Mode/Terms of Payment
+          </th>
+        </tr>
+
+        <!-- Empty row -->
+        <tr>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+        </tr>
+
+      </tbody>
+      <tbody>
+        <tr>
+          <th colspan="3" rowspan="2" class="text-center align-middle f_10 fw_600">
+            Buyer
+          </th>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Supplier's Ref.
+          </th>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Other Reference(s)
+          </th>
+        </tr>
+
+        <!-- Empty row -->
+        <tr>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+        </tr>
+
+      </tbody>
+      <tbody>
+        <tr>
+          <th rowspan="6" colspan="3">
+            <div class="f_10 fw-bold">
+              <span id="party_nme">
+              </span>
+              <br>
+              <span id="party_break">
+              </span>
+            </div>
+            <div class="f_10 fw_600" id="pdf_add">
+
+            </div>
+            <i class="f_10 fw-bold">GSTIN:<span id="gstin"></span></i>
+          </th>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Buyer's Order No.
+          </th>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Dated
+          </th>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="f_10 fw-bold text-center align-middle" id="buyers_or_no">
+          </td>
+          <td colspan="2" class="f_10 fw-bold text-center align-middle " id="buyer_date">
+          </td>
+        </tr>
+
+        <!-- Empty row -->
+        <tr>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+        </tr>
+
+        <tr>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Despatch Document No
+          </th>
+          <th colspan="2" class="text-center align-middle f_10 fw_600">
+            Dated
+          </th>
+        </tr>
+
+        <!-- Empty row -->
+        <tr>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+        </tr>
+
+      </tbody>
+
+      <tbody>
+        <tr class="f_10 fw_600 text-center">
+          <td>S.No</td>
+          <td class="">Description of Goods
+          </td>
+          <td>HSN</td>
+          <td>Quantity</td>
+          <td>Rate</td>
+          <td>GST</td>
+          <td>Amount</td>
+        </tr>
+        <tr class="f_10 fw_600 text-center">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Amt.</td>
+          <td>Rate</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+
+      <tbody id="tbody_data">
+
+      </tbody>
+
+      <% for(var i=0; i<5; i++) {%>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <% } %>
+          <tr class="f_10 fw-bold text-center">
+            <td></td>
+            <td class="text-end">SUB TOTAL:</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-end" id="sub_total">
+            </td>
+
+          </tr>
+
+          <tr class="text-end f_10 fw-bold i_gst_row d-none ">
+            <td rowspan="5"></td>
+            <td>FREIGHT</td>
+            <td>9965</td>
+            <td></td>
+            <td></td>
+            <td>18%</td>
+            <td>0.00</td>
+          </tr>
+
+
+
+
+          <tr class="text-end f_10 fw-bold i_gst_row d-none">
+            <td>IGST @ 5%
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="i_gst_five">
+            </td>
+          </tr>
+
+          <tr class="text-end f_10 fw-bold i_gst_row d-none">
+            <td>IGST @ 12%
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="i_gst_twelve"></td>
+          </tr>
+
+          <tr class="text-end f_10 fw-bold i_gst_row d-none">
+            <td>IGST @ 18%
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="i_gst_eighteen"></td>
+          </tr>
+
+
+          <tr class="text-end f_10 fw-bold c_gst_row d-none freight_row">
+            <td rowspan="8" id="freight_row"></td>
+            <td>FREIGHT</td>
+            <td>9965</td>
+            <td></td>
+            <td></td>
+            <td>18%</td>
+            <td>0.00</td>
+          </tr>
+          
+          <tr class="text-end f_10 fw-bold c_gst_row d-none cgst5_row freight_row">
+            <td>CGST @ 2.5%</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="cgst5"></td>
+          </tr>
+          
+          <tr class="text-end f_10 fw-bold c_gst_row d-none sgst5_row freight_row">
+            <td>SGST @ 2.5%</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="sgst5"></td>
+          </tr>
+          
+          <tr class="text-end f_10 fw-bold c_gst_row d-none cgst12_row freight_row">
+            <td>CGST @ 6%</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="cgst12"></td>
+          </tr>
+          
+          <tr class="text-end f_10 fw-bold c_gst_row d-none sgst12_row freight_row">
+            <td>SGST @ 6%</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="sgst12"></td>
+          </tr>
+          
+          <tr class="text-end f_10 fw-bold c_gst_row d-none cgst18_row freight_row">
+            <td>CGST @ 9%</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="cgst18"></td>
+          </tr>
+          
+          <tr class="text-end f_10 fw-bold c_gst_row d-none sgst18_row freight_row">
+            <td>SGST @ 9%</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="sgst18"></td>
+          </tr>
+
+          <tr class="text-end f_10 fw-bold">
+            <td>Round off
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0.00
+            </td>
+          </tr>
+          <tr class="text-end f_10 fw-bold">
+            <td></td>
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="total">
+            </td>
+          </tr>
+          <tr class=" f_10 fw-bold">
+            <td colspan="7" class="">
+
+              <span class="text-start">Amount Chargeable (in words)</span>
+              <span class="float-end">E. & O.E</span>
+
+            </td>
+          </tr>
+          <tr class="f_10 fw-bold">
+            <td colspan="7" class="" id="total_in_words"> 
+
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="7"></td>
+          </tr>
+
+
+          <tr class="f_10 fw-bold text-center align-middle">
+            <td colspan="2" rowspan="2"> Taxable Value</td>
+            <td colspan="3" class="text-center">Integrated Tax</td>
+            <td rowspan="2"></td>
+            <td rowspan="2">Tax Amount</td>
+
+          </tr>
+          <tr class="f_10 text-center fw-bold ">
+            <td>Rate</td>
+            <td colspan="2">Amt</td>
+
+          </tr>
+          <tr class="f_10 fw_600 text-center">
+            <td>1</td>
+            <td>0.00</td>
+            <td>5%</td>
+            <td colspan="2">0.00 </td>
+            <td></td>
+            <td>0.00</td>
+
+          </tr>
+
+          <tr class="f_10 fw_600 text-center">
+            <td>2</td>
+            <td>6000.00</td>
+            <td>12%</td>
+            <td colspan="2">720.00</td>
+            <td></td>
+            <td>720.00</td>
+
+          </tr>
+          <tr class="f_10 fw_600 text-center">
+            <td>3</td>
+            <td>0.00</td>
+            <td>18%</td>
+            <td colspan="2">0.00 </td>
+            <td></td>
+            <td>0.00</td>
+
+          </tr>
+          <tr class="f_10 fw_600 text-center">
+            <td></td>
+            <td>6000.00</td>
+            <td></td>
+            <td colspan="2"></td>
+            <td></td>
+            <td>720.00</td>
+
+          </tr>
+
+          <tr>
+            <td colspan="7"></td>
+          </tr>
+
+          <tr>
+            <td colspan="7" class="f_10 fw_600">Amount Chargeable (in words)
+            </td>
+          </tr>
+          <tr>
+            <td colspan="7" class="fw-bold f_10">INR.SEVEN HUNDRED AND TWENTY RUPEES ONLY/-
+            </td>
+          </tr>
+
+
+
+          <tr>
+            <td class="f_10 fw_600">Company's PAN No. :
+            </td>
+            <td class="f_10 fw-bold border-right-0">AREPB3288Q
+            </td>
+            <td colspan="5" class=" border-left-0">
+
+            </td>
+
+          </tr>
+          <tr class="f_10 fw_600">
+            <td colspan="2">
+              Declaration
+            </td>
+            <td colspan="5" rowspan="4">
+              <div class="container-fluid ">
+
+                <div class="row text-center f_10 fw-bold">
+                  <div class="col-12">
+                    Declaration for Souvik Bose
+
+                  </div>
+
+                </div>
+                <div class="row py-5">
+
+                </div>
+
+                <div class="row text-center f_10 fw_600">
+                  <div class="col-12">
+
+                    Authorised Signatory
+                  </div>
+                </div>
+              </div>
+
+            </td>
+          </tr>
+          <tr class="f_10 fw_600">
+            <td colspan="2">We declare that this invoice shows the actual
+            </td>
+          </tr>
+          <tr class="f_10 fw_600">
+            <td colspan="2">price of the goods described and that all
+            </td>
+          </tr>
+          <tr class="f_10 fw_600">
+            <td colspan="2">
+              particulars are true and correct.
+            </td>
+          </tr>
+          </tbody>
+    </table>
+
+
+
+  </div>
+
+
+
+
+
+  <script src="/static/cdn/jquery/jquery_v3.7.1.js"></script>
+  <script src="/static/cdn/bootstrap/boostrap_v5.3.js"></script>
+  <script src="/static/cdn/selectpicker/selectpicker.js"></script>
+  <script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script>
+  <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+  <script src="/static/js/index.js"></script>
+
+</body>
+
+</html>
